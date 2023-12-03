@@ -1,0 +1,22 @@
+{
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build"
+    },
+    "devDependencies": {
+        "axios": "^1.6.1",
+        "laravel-vite-plugin": "^0.8.0",
+        "vite": "^4.0.0"
+    },
+    "dependencies": {
+        "fs": "^0.0.1-security",
+        "jimp": "^0.3.5",
+        "jsqr": "^1.4.0",
+        "qr-scanner": "^1.4.2",
+        "qrcode": "^1.5.3",
+        "qrcode-reader": "^1.0.4",
+        "qrcode-terminal": "^0.12.0"
+      }
+}
