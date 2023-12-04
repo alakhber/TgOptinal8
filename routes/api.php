@@ -34,7 +34,7 @@ Route::match(['get', 'post'], '/telegram', function () {
                 [$button1, $button2],
             ],
         ];
-        $url = "https://api.telegram.org/bot$token/sendMessage";
+        $url = "https://api.telegram.org/bot$token/sendMessage?";
         $url .= "chat_id=".$update['message']['chat']['id'];
         $url .= "text=Lütfen bir seçenek seçin:";
         $url .= "reply_markup=".json_encode($keyboard);
