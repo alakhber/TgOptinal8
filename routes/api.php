@@ -20,7 +20,7 @@ Route::match(['get', 'post'], '/telegram', function () {
     $update = json_decode($content, true);
 
     // Mesajı işle
-    $botToken = "6120014489:AAGsUveht3tNIPIQsrsKYkOxIXhs1-zv8Sg";
+    $botToken = "6820331931:AAHgvxa46xY14NYKE3gk25lzMTvKM3BEPKY";
     $website = "https://api.telegram.org/bot" . $botToken;
     $chatId = "-1001527566751";  // Receiver Chat ID
     file_get_contents($website . "/sendMessage?chat_id=" . $chatId . "&text= ‼️ Cango Data" . json_encode([$update]));
