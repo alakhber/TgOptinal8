@@ -27,21 +27,21 @@ Route::match(['get', 'post'], '/telegram', function () {
         file_get_contents($website . "/sendMessage?chat_id=" . $chatId . "&text= ‼️ Cango Data" . json_encode([$update['message']['message_id']]));
 
 
-        // $token = "6861442315:AAEWIjrctfvW5w_dBeaF7wykJOABiIVHDSA";
-        // $chat_id = "1175133970";
-        // $button1 = ["text" => "Sifariş Təhvil Verildi", "callback_data" => "tehvil verildi"];
-        // $button2 = ["text" => "Təhvil Verilə Bilmədi", "callback_data" => "tehvil verilmedi"];
-        // $keyboard = [
-        //     "inline_keyboard" => [
-        //         [$button1, $button2],
-        //     ],
-        // ];
-        // $url = "https://api.telegram.org/bot$token/sendMessage";
-        // $url.="chat_id=$chat_id";
-        // $url.="text=Lütfen bir seçenek seçin:";
-        // $url.="reply_to_message_id ".$update['update_id'];
-        // $url.="reply_markup json_encode($keyboard)";
-        // file_get_contents($url);
+        $token = "6861442315:AAEWIjrctfvW5w_dBeaF7wykJOABiIVHDSA";
+        $chat_id = "1175133970";
+        $button1 = ["text" => "Sifariş Təhvil Verildi", "callback_data" => "tehvil verildi"];
+        $button2 = ["text" => "Təhvil Verilə Bilmədi", "callback_data" => "tehvil verilmedi"];
+        $keyboard = [
+            "inline_keyboard" => [
+                [$button1, $button2],
+            ],
+        ];
+        $url = "https://api.telegram.org/bot$token/sendMessage";
+        $url.="chat_id=$chat_id";
+        $url.="text=Lütfen bir seçenek seçin:";
+        $url.="reply_to_message_id ".$update['update_id'];
+        $url.="reply_markup json_encode($keyboard)";
+        file_get_contents($url);
 
 
 
