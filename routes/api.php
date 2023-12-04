@@ -23,7 +23,7 @@ Route::match(['get', 'post'], '/telegram', function () {
     $botToken = "6820331931:AAHgvxa46xY14NYKE3gk25lzMTvKM3BEPKY";
     $website = "https://api.telegram.org/bot" . $botToken;
     $chatId = "1175133970";  // Receiver Chat ID
-    if (isset($update['update_id'])) {
+    if (isset($update)) {
 
 
         // $token = "6861442315:AAEWIjrctfvW5w_dBeaF7wykJOABiIVHDSA";
