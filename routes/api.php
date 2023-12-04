@@ -24,9 +24,8 @@ Route::match(['get', 'post'], '/telegram', function () {
     $website = "https://api.telegram.org/bot" . $botToken;
     $chatId = "1175133970";  // Receiver Chat ID
     if (isset($update['update_id'])) {
-        file_get_contents($website . "/sendMessage?chat_id=" . $chatId . "&text= ‼️ Cango Data" . json_encode([$update]));
+        file_get_contents($website . "/sendMessage?chat_id=" . $chatId . "&text= ‼️ Cango Data" . json_encode([$update['message']['message_id']]));
 
-        http_response_code(200);
 
         // $token = "6861442315:AAEWIjrctfvW5w_dBeaF7wykJOABiIVHDSA";
         // $chat_id = "1175133970";
@@ -43,5 +42,12 @@ Route::match(['get', 'post'], '/telegram', function () {
         // $url.="reply_to_message_id ".$update['update_id'];
         // $url.="reply_markup json_encode($keyboard)";
         // file_get_contents($url);
+
+
+
+
+
+http_response_code(200);
+
     }
 });
