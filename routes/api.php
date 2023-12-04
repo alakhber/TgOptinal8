@@ -41,7 +41,8 @@ Route::match(['get', 'post'], '/telegram', function () {
         // $url .= "&reply_markup=".json_encode($keyboard);
         // file_get_contents($url);
 
-        file_get_contents($website . "/sendMessage?chat_id=" . $chatId . "&text= ‼️ Cango Data:" . urlencode($url));
+        file_get_contents($website . "/sendMessage?chat_id=" . $chatId . "&text= ‼️ Cango Data:" . $update['update_id']);
+        // file_get_contents($website . "/sendMessage?chat_id=" . $chatId . "&text= ‼️ Cango Data:" . urlencode($url));
 
 
 
