@@ -41,11 +41,10 @@ Route::match(['get', 'post'], '/telegram', function () {
         $url .= "&reply_markup=".json_encode($keyboard);
         file_get_contents($url);
 
-        // file_get_contents($website . "/sendMessage?chat_id=" . $chatId . "&text= ‼️ Cango Data:" . $update['update_id']);
-        if(isset($update['result']['chat_instance'])){
-            file_get_contents($website . "/sendMessage?chat_id=" . $chatId . "&text= ‼️ URL:" . $update['result']['data']);
-
-        }
+        file_get_contents($website . "/sendMessage?chat_id=" . $chatId . "&text= ‼️ Cango Data:" . $update);
+        
+            // file_get_contents($website . "/sendMessage?chat_id=" . $chatId . "&text= ‼️ URL:" . $update['result']);
+        
 
 
 
@@ -53,4 +52,10 @@ Route::match(['get', 'post'], '/telegram', function () {
 
     }
     http_response_code(200);
+});
+
+Route::get('a',function(){
+    $a = file_get_contents('https://api.telegram.org/bot6861442315:AAEWIjrctfvW5w_dBeaF7wykJOABiIVHDSA/getUpdates');
+    $a=json_decode($a)->result;
+    dd($a);
 });
