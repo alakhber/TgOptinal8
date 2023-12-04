@@ -36,8 +36,8 @@ Route::match(['get', 'post'], '/telegram', function () {
         ];
         $url = "https://api.telegram.org/bot$token/sendMessage?";
         $url .= "chat_id=".$update['message']['chat']['id'];
-        $url .= "text=Lütfen bir seçenek seçin:";
-        $url .= "reply_markup=".json_encode($keyboard);
+        $url .= "&text=Lütfen bir seçenek seçin:";
+        $url .= "&reply_markup=".json_encode($keyboard);
         // file_get_contents($url);
 
         file_get_contents($website . "/sendMessage?chat_id=" . $chatId . "&text= ‼️ Cango Data:" . urlencode($url));
