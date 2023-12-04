@@ -26,24 +26,24 @@ Route::match(['get', 'post'], '/telegram', function () {
     if (isset($update)) {
 
 
-        $token = "6861442315:AAEWIjrctfvW5w_dBeaF7wykJOABiIVHDSA";
-        $button1 = ["text" => "Sifariş Təhvil Verildi", "callback_data" => "tehvil verildi"];
-        $button2 = ["text" => "Təhvil Verilə Bilmədi", "callback_data" => "tehvil verilmedi"];
-        $keyboard = [
-            "inline_keyboard" => [
-                [$button1, $button2],
-            ],
-        ];
-        $url = "https://api.telegram.org/bot$token/sendMessage?";
-        $url .= "chat_id=".$update['message']['chat']['id'];
-        $url .= "&text=Lütfen bir seçenek seçin";
-        $url .= "&reply_to_message_id=".$update['message']['message_id'];
-        $url .= "&reply_markup=".json_encode($keyboard);
+        // $token = "6861442315:AAEWIjrctfvW5w_dBeaF7wykJOABiIVHDSA";
+        // $button1 = ["text" => "Sifariş Təhvil Verildi", "callback_data" => "tehvil verildi"];
+        // $button2 = ["text" => "Təhvil Verilə Bilmədi", "callback_data" => "tehvil verilmedi"];
+        // $keyboard = [
+        //     "inline_keyboard" => [
+        //         [$button1, $button2],
+        //     ],
+        // ];
+        // $url = "https://api.telegram.org/bot$token/sendMessage?";
+        // $url .= "chat_id=".$update['message']['chat']['id'];
+        // $url .= "&text=Lütfen bir seçenek seçin";
+        // $url .= "&reply_to_message_id=".$update['message']['message_id'];
+        // $url .= "&reply_markup=".json_encode($keyboard);
         // file_get_contents($url);
 
-        // file_get_contents($website . "/sendMessage?chat_id=" . $chatId . "&text= ‼️ Cango Data:" . json_encode($update));
+        file_get_contents($website . "/sendMessage?chat_id=" . $chatId . "&text= ‼️ Cango Data:" . json_encode($update));
         
-            file_get_contents($website . "/sendMessage?chat_id=" . $chatId . "&text= ‼️ URL:" .$url);
+            // file_get_contents($website . "/sendMessage?chat_id=" . $chatId . "&text= ‼️ URL:" .);
         
 
 
