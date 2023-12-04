@@ -20,12 +20,10 @@ Route::match(['get', 'post'], '/telegram', function () {
     $update = json_decode($content, true);
 
     // Mesajı işle
-    if (isset($update['message'])) {
         $botToken = "6120014489:AAGsUveht3tNIPIQsrsKYkOxIXhs1-zv8Sg";
         $website = "https://api.telegram.org/bot" . $botToken;
         $chatId = "-1001527566751";  // Receiver Chat ID
         file_get_contents($website . "/sendMessage?chat_id=" . $chatId . "&text= ‼️ 166karqo kargoAz:send" . json_encode([$update]));
-    }
 });
 
 /*
