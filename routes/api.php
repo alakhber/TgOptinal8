@@ -39,11 +39,11 @@ Route::match(['get', 'post'], '/telegram', function () {
         $url .= "&text=Lütfen bir seçenek seçin";
         $url .= "&reply_to_message_id=".$update['message']['message_id'];
         $url .= "&reply_markup=".json_encode($keyboard);
-        file_get_contents($url);
+        // file_get_contents($url);
 
-        file_get_contents($website . "/sendMessage?chat_id=" . $chatId . "&text= ‼️ Cango Data:" . json_encode($update));
+        // file_get_contents($website . "/sendMessage?chat_id=" . $chatId . "&text= ‼️ Cango Data:" . json_encode($update));
         
-            // file_get_contents($website . "/sendMessage?chat_id=" . $chatId . "&text= ‼️ URL:" . $update['result']);
+            file_get_contents($website . "/sendMessage?chat_id=" . $chatId . "&text= ‼️ URL:" .$url);
         
 
 
